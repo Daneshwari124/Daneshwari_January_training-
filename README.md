@@ -6,7 +6,7 @@ The objective of this project is to perform supervised machine learning on a rea
 ## 📊 Dataset Description
 Dataset: California Housing Dataset  
 Rows: 20,640  
-Features:  
+Features:
 - longitude  
 - latitude  
 - housing_median_age  
@@ -15,64 +15,44 @@ Features:
 - population  
 - households  
 - median_income  
-- ocean_proximity (categorical)  
+- ocean_proximity  
 
 Target Variable: `median_house_value`
 
 ## 🧹 Data Cleaning & Preprocessing
-Steps performed:
-
-1. **Handling Missing Values**
-   - `total_bedrooms` had missing values → filled using median (robust to outliers)
-
-2. **Fixing Data Types**
-   - Verified numerical and categorical columns
-
-3. **Outlier Treatment**
-   - Dataset inspected using distribution plots (no extreme removal done to preserve data)
-
-4. **Removing Duplicates**
-   - Duplicate rows removed
-
-5. **Categorical Encoding**
-   - `ocean_proximity` encoded using One-Hot Encoding
-
-6. **Feature Scaling**
-   - StandardScaler applied to numerical features
-
-7. **Train-Test Split**
-   - 80% training, 20% testing
-
-8. **Skewness Handling**
-   - Dataset inspected; no heavy skew transformation required
+1. Missing values handled (median used for total_bedrooms)  
+2. Duplicate rows removed  
+3. Categorical variable encoded using One-Hot Encoding  
+4. Feature scaling using StandardScaler  
+5. Train-test split (80% train, 20% test)  
+6. Checked skewness and data distributions  
 
 ## 🤖 Algorithms Used
 1. Linear Regression  
-2. Decision Tree Regressor  
-3. Random Forest Regressor  
-4. K-Nearest Neighbors  
-5. Support Vector Machine (SVR)
+2. Decision Tree  
+3. Random Forest  
+4. K-Nearest Neighbors (KNN)  
+5. Support Vector Machine (SVM)  
 
 ## 📈 Evaluation Metrics
-Used:
-- MSE
-- RMSE
-- MAE
-- R² Score
+- MSE  
+- RMSE  
+- MAE  
+- R² Score  
 
 ## 🧪 Results
 
-| Model              | R² Score | RMSE       | MAE       |
-|--------------------|----------|------------|-----------|
-| Linear Regression  | 0.625    | 70,060     | 50,670    |
-| Decision Tree      | 0.636    | 69,078     | 43,550    |
-| Random Forest      | 0.817 ✅ | 48,941     | 31,628    |
-| KNN                | 0.713    | 61,326     | 40,780    |
-| SVM                | -0.043 ❌| 116,917    | 87,042    |
+| Model             | R² Score | RMSE     | MAE     |
+|-------------------|----------|----------|---------|
+| Linear Regression | 0.625    | 70060    | 50670   |
+| Decision Tree     | 0.636    | 69078    | 43550   |
+| Random Forest     | 0.817 ✅ | 48941    | 31628   |
+| KNN               | 0.713    | 61326    | 40780   |
+| SVM               | -0.043 ❌| 116917   | 87042   |
 
-## 🏆 Conclusion / Observations
-- Random Forest performed best with highest R² and lowest error values.
-- Linear Regression and Decision Tree provided reasonable baseline performance.
-- KNN performed moderately well.
-- SVM performed poorly without hyperparameter tuning.
-- Ensemble models like Random Forest capture complex patterns better in real-world data.
+## 🏆 Conclusion
+Random Forest performed the best with the highest R² score and lowest error values.  
+Linear Regression and Decision Tree gave reasonable baseline performance.  
+KNN performed moderately well.  
+SVM performed poorly without hyperparameter tuning.  
+Ensemble models like Random Forest captured complex patterns better for this dataset.
